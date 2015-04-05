@@ -1,20 +1,26 @@
 <?php
-$mysqli = new mysqli ( "localhost", "root", "", "timnei", "3307" );
+$conn = new mysqli ( "localhost", "root", "", "timnei", "3306" );
 
 $user_ip = getUserIP();
 $ip=getUserIP();
-$result ="SELECT `time` FROM `count` WHERE ip='$ip'";
 
-$mysqli->query ( $result );
+//$result ="SELECT 'time' FROM 'count' WHERE ip='$ip'";
+//$mysqli->query ( $result );
 
-$speichern = "INSERT INTO `count`(`count`, `ip`) VALUES (1,'".$user_ip."')";
+/*
+ * Query "speichern" um Daten einzutragen
+ * (ja)
+ */
+$speichern = "INSERT INTO count (ip, counter, ja, nei) 
+		VALUES ('$ip', 0, 1, 0)";
+$conn->query ($speichern);
 
-$mysqli->query ( $speichern );
-
-echo $result;
-
-
-
+/*
+ * Query "getNei" um Anzahl Nei abzufragen
+ */
+$getNei = "SELECT counter FROM count 
+		WHERE nei = 1 order by id desc limit 1";
+$conn->query ($getNei);
 
 function getUserIP() {
 	if( array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER) && !empty($_SERVER['HTTP_X_FORWARDED_FOR']) ) {
@@ -30,3 +36,5 @@ function getUserIP() {
 	}
 }
 
+$conn->close();
+?>

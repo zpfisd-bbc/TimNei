@@ -1,6 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=viewport content="width=device-width, initial-scale=1">
 <title>Tim nei...</title>
 <!-- ** CSS ** -->
 <link rel="stylesheet" type="text/css" href="css/theme.css" />
@@ -9,7 +10,7 @@
 <body>
 	<!-- ** PHP ** -->
     <!-- ** HTML ** -->
-	<div class="centered">
+	<div class="container centered">
 		<form id="timnei" action="resources/nei_counter.php" method="post">
 			<input type="submit" value="tim nei"
 				class="btn btn-danger timbtn hvr-fade-red" />
@@ -20,7 +21,9 @@
 				class="btn btn-warning timbtn2 hvr-fade-orange" />
 		</form>
 	</div>
-		<div class="panel panel-danger counter">
+	
+	<!-- "tim nei" panel -->
+	<div class="panel panel-danger counter">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Tim Nei</h3>
 	  </div>
@@ -29,6 +32,7 @@
 	  </div>
 	</div>
 	
+	<!-- "tim nei" panel -->
 	<div class="panel panel-warning counter">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Tim Ja</h3>
@@ -37,20 +41,21 @@
 	  	0
 	  </div>
 	</div>
-	
-	<div class="progress progress-striped active counterProgress">
-  		<div class="progress-bar progress-bar-danger" style="width: 80%"></div>
-		<div class="progress-bar progress-bar-warning" style="width: 20%"></div>
-	</div>
-	
-    </body>
+</body>
     
-    <footer>
+<footer>    
     <div class="panel-footer">
-    	<hr>
+    	<!-- progress bar -->
+    	<h4>Differenz Meter</h4>
+    	
+    	<div class="progress progress-striped active counterProgress">
+  			<div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+			<div class="progress-bar progress-bar-warning" style="width: 20%"></div>
+		</div>
+
+		<hr>
     	<h5></h5>
     	<h5>&#169; TimNei</h5>
     </div>
-    </footer>
-    
+</footer>
 </html>
