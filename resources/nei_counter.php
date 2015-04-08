@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli ( "localhost", "root", "", "timnei", "3306" );
+include_once 'connection.php';
 
 $ip = getUserIP();
 /*

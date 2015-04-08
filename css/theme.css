@@ -13,6 +13,11 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 /* ----- SELF MADE -----  */
+@media screen and (max-width: 420px) {
+    .counter {
+    	float: right !important;
+    }
+}
 .centered {
 	text-align: center;
 }
@@ -20,7 +25,7 @@ html {
 	position: absolute;
 	top: 38%;
 	margin-left: -98px;
-	font-size: 358% !important;
+	font-size: 350% !important;
 	border-radius: 8px !important;
 }
 .timbtn2 {

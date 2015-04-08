@@ -9,6 +9,15 @@
 </head>
 <body>
 	<!-- ** PHP ** -->
+	<?php 
+	include_once 'resources/ja_counter.php';
+	include_once 'resources/connection.php';
+	
+	/*
+	 * Query "getNei" um Anzahl Nei abzufragen
+ 	*/
+	$getNei = "SELECT count(nei) from count where nei = 1";
+	?>
     <!-- ** HTML ** -->
 	<div class="container centered">
 		<form id="timnei" action="resources/nei_counter.php" method="post">
@@ -28,11 +37,13 @@
 	    <h3 class="panel-title">Tim Nei</h3>
 	  </div>
 	  <div class="panel-body">
-	  	0
+	  <?php
+// 		$results = $conn->query(""); TOODOO
+	  ?>
+	  0
 	  </div>
 	</div>
-	
-	<!-- "tim nei" panel -->
+	<!-- "tim ja" panel -->
 	<div class="panel panel-warning counter">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Tim Ja</h3>
