@@ -10,13 +10,8 @@
 <body>
 	<!-- ** PHP ** -->
 	<?php 
-	include_once 'resources/ja_counter.php';
+	include_once 'resources/functions.php';
 	include_once 'resources/connection.php';
-	
-	/*
-	 * Query "getNei" um Anzahl Nei abzufragen
- 	*/
-	$getNei = "SELECT count(nei) from count where nei = 1";
 	?>
     <!-- ** HTML ** -->
 	<div class="container centered">
@@ -37,10 +32,14 @@
 	    <h3 class="panel-title">Tim Nei</h3>
 	  </div>
 	  <div class="panel-body">
+	  
 	  <?php
-// 		$results = $conn->query(""); TOODOO
+		$result = $conn->query($getNei);
+		$result = $result->fetch_array();
+		echo $result[0];
+		$varNei = intval($result[0]);
 	  ?>
-	  0
+	  
 	  </div>
 	</div>
 	<!-- "tim ja" panel -->
@@ -49,7 +48,15 @@
 	    <h3 class="panel-title">Tim Ja</h3>
 	  </div>
 	  <div class="panel-body">
-	  	0
+	  
+	  <?php 
+	  	$result = $conn->query($getJa);
+	  	$result = $result->fetch_array();
+	  	echo $result[0];
+	  	$varJa = intval($result[0]);
+	  	$total = $varJa + $varNei;
+	  ?>
+	  	
 	  </div>
 	</div>
 </body>
@@ -58,15 +65,14 @@
     <div class="panel-footer">
     	<!-- progress bar -->
     	<h4>Differenz Meter</h4>
-    	
     	<div class="progress progress-striped active counterProgress">
-  			<div class="progress-bar progress-bar-danger" style="width: 80%"></div>
-			<div class="progress-bar progress-bar-warning" style="width: 20%"></div>
+  			<div class="progress-bar progress-bar-danger" style="width: <?php echo(100 / $total * $varNei); ?>%"></div>
+			<div class="progress-bar progress-bar-warning" style="width: <?php echo(100 / $total * $varJa);?>%"></div>
 		</div>
 
 		<hr>
     	<h5></h5>
-    	<h5>&#169; TimNei</h5>
+    	<h5>&copy; TimNei</h5>
     </div>
 </footer>
 </html>
