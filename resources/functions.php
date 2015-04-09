@@ -1,9 +1,19 @@
 <?php
+include_once 'connection.php';
+
+$ip = getUserIP();
+
+$jahr = date("y");
+$monat = date("m");
+$tag = date("d");
+$stunde = date("h");
+$minute = date("i");
+$sekunde = date("s");
 
 /*
  * Query um die IP auszulesen
  */
-$getIP = "SELECT ip, time FROM count where ip = '127.0.0.1' ORDER BY ID DESC LIMIT 1";
+$getLastEntry = "SELECT ip, time FROM count where ip = '$ip' ORDER BY ID DESC LIMIT 1";
 
 /*
  * Query um Anzahl NEI aus DB auszulesen
@@ -31,3 +41,12 @@ function getUserIP() {
 		return $_SERVER['REMOTE_ADDR'];
 	}
 }
+
+function validator() {
+	$resultsL = $conn->query($getLastEntry);
+	$resultsL = $resultsL->fetch_array();
+	
+	if ($ip == $resultsL) {
+	}
+}
+?>

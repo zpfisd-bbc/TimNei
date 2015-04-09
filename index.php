@@ -15,12 +15,12 @@
 	?>
     <!-- ** HTML ** -->
 	<div class="container centered">
-		<form id="timnei" action="resources/nei_counter.php" method="post">
+		<form id="timnei" action="" method="post">
 			<input type="submit" value="tim nei"
 				class="btn btn-danger timbtn hvr-fade-red" />
 		</form>
 
-		<form id="timja" action="resources/ja_counter.php" method="post">
+		<form id="timja" action="" method="post">
 			<input type="submit" value="tim ja"
 				class="btn btn-warning timbtn2 hvr-fade-orange" />
 		</form>
