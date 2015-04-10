@@ -12,15 +12,31 @@
 	<?php 
 	include_once 'resources/functions.php';
 	include_once 'resources/connection.php';
+	
+	if ($fail == true) {
+		echo "<div class='alert alert-dismissible alert-danger'>
+	  		<button type='button' class='close' data-dismiss='alert'><a href='#'>X</a></button>
+	  		<strong>Oh nei!</strong> Du kannst nur alle 5min abstimmen!
+		</div>";
+	} elseif ($success == true) {
+		echo "<div class='alert alert-dismissible alert-danger'>
+	  		<button type='button' class='close' data-dismiss='alert'><a href='#'>X</a></button>
+	  		<strong>Oh ja!</strong> Du kannst nur alle 5min abstimmen!
+		</div>";
+	} else {}
+	
+	if ($success == true) {
+		echo $success;
+	}
 	?>
     <!-- ** HTML ** -->
 	<div class="container centered">
-		<form id="timnei" action="" method="post">
+		<form id="timnei" action="resources/nei_counter.php" method="post">
 			<input type="submit" value="tim nei"
 				class="btn btn-danger timbtn hvr-fade-red" />
 		</form>
 
-		<form id="timja" action="" method="post">
+		<form id="timja" action="resources/ja_counter.php" method="post">
 			<input type="submit" value="tim ja"
 				class="btn btn-warning timbtn2 hvr-fade-orange" />
 		</form>
