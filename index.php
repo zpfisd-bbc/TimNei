@@ -13,21 +13,6 @@
 	include_once 'resources/functions.php';
 	include_once 'resources/connection.php';
 	
-	if ($fail == true) {
-		echo "<div class='alert alert-dismissible alert-danger'>
-	  		<button type='button' class='close' data-dismiss='alert'><a href='#'>X</a></button>
-	  		<strong>Oh nei!</strong> Du kannst nur alle 5min abstimmen!
-		</div>";
-	} elseif ($success == true) {
-		echo "<div class='alert alert-dismissible alert-danger'>
-	  		<button type='button' class='close' data-dismiss='alert'><a href='#'>X</a></button>
-	  		<strong>Oh ja!</strong> Du kannst nur alle 5min abstimmen!
-		</div>";
-	} else {}
-	
-	if ($success == true) {
-		echo $success;
-	}
 	?>
     <!-- ** HTML ** -->
 	<div class="container centered">

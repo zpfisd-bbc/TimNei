@@ -13,9 +13,12 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 /* ----- SELF MADE -----  */
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 450px) {
     .counter {
     	float: right !important;
+    }
+    .alertTim {
+		font-size: 400px !important;
     }
 }
 .centered {
@@ -46,12 +49,23 @@ html {
 	margin-left: auto;
 	margin-right: 3%;
 	width: 90px;
+ 	font-size: 21px;
+ 	font-weight: bold;
 }
 .counterProgress {
-	width: 60%;
+	width: 80%;
 	margin: 0 auto;
 }
-@media(min-width:60em){h3{font-size: 90%}}
+.alertTim {
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 1%;
+	margin-right: 3%;
+ 	font-size: 200%;
+ 	font-weight: bold;
+   	text-shadow: 0 1px 0 #ffffff;
+  	opacity: 0.9;
+}
 /* ----- BOOTSTRAP CSS ----- */
 body {
   margin: 0;
